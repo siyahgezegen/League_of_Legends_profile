@@ -1,11 +1,10 @@
-// ignore_for_file: library_prefixes,depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:my_lol_profile/pages/mainpage/main_page.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-Future main() async {
-  await DotEnv.dotenv.load(fileName: ".env");
+void main() async {
+  await dotenv.load(fileName: ".env");
   runApp(const MyApp());
 }
 
@@ -20,8 +19,8 @@ class MyApp extends StatelessWidget {
           color: Colors.white,
           iconTheme: Theme.of(context).iconTheme,
           systemOverlayStyle: SystemUiOverlayStyle.dark,
-          toolbarTextStyle: Theme.of(context).textTheme.bodySmall,
-          titleTextStyle: Theme.of(context).textTheme.bodySmall,
+          toolbarTextStyle: Theme.of(context).textTheme.bodyMedium,
+          titleTextStyle: Theme.of(context).textTheme.bodyMedium,
         ),
       ),
       debugShowCheckedModeBanner: false,

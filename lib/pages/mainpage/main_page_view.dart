@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_lol_profile/pages/mainpage/main_page_view_model.dart';
+import 'package:my_lol_profile/widgets/champion_image.dart';
 
 import '../../widgets/circle_summoner_avatar.dart';
 
@@ -78,8 +79,10 @@ class MainPageView extends MainPageViewModel {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Image.network(
-                                      'http://ddragon.leagueoflegends.com/cdn/13.14.1/img/champion/Ezreal.png'),
+                                  ChampionImage(
+                                      champImagePath: bestchamplist[i]
+                                          .championId
+                                          .toString()),
                                   Text(
                                       bestchamplist[i].championLevel.toString(),
                                       style: textStyle),

@@ -11,6 +11,7 @@ class ChampionServices {
   String summonerName;
   ChampionServices({required this.summonerName});
   String summonerId = '';
+
   String _builChampUrl() {
     if (summonerId.isEmpty) {
       throw Exception('Summoner name cannot be empty');

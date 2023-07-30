@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable
+import 'dart:io';
 
 import 'package:my_lol_profile/constants/shared_constants.dart';
 import 'dart:convert' as convert;
@@ -26,10 +26,9 @@ class SummonerServices {
     }
     var uri = Uri.parse(_buildSummonerUrl());
     var response = await http.get(uri);
-    print(_buildSummonerUrl());
     Summoner summoner = Summoner();
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == HttpStatus.ok) {
       var jsonResponse =
           convert.jsonDecode(response.body) as Map<String, dynamic>;
       Summoner sum = Summoner.fromJson(jsonResponse);

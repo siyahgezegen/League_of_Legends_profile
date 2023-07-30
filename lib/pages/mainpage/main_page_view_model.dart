@@ -4,13 +4,14 @@ import 'package:my_lol_profile/models/best_champions.dart';
 import 'package:my_lol_profile/models/league.dart';
 import 'package:my_lol_profile/models/summoner.dart';
 import 'package:my_lol_profile/pages/mainpage/main_page.dart';
-import 'package:my_lol_profile/services/summoner_services/champion_services.dart';
-import 'package:my_lol_profile/services/summoner_services/league_services.dart';
-import 'package:my_lol_profile/services/summoner_services/summoner_services.dart';
+import 'package:my_lol_profile/network/services/champion_services.dart';
+import 'package:my_lol_profile/network/services/league_services.dart';
+import 'package:my_lol_profile/network/services/summoner_services.dart';
 
 abstract class MainPageViewModel extends State<MainPage> {
   late TextEditingController controller;
   String dataMessage = '';
+  String imagePath = "";
 
   @override
   void initState() {
@@ -78,7 +79,7 @@ abstract class MainPageViewModel extends State<MainPage> {
         league = leg;
       });
     } catch (error) {
-      print('error  : $error');
+      print('error<getLeagueData> : $error');
       setState(() {
         league = League();
       });

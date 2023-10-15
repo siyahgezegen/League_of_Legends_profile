@@ -2,7 +2,7 @@
 
 import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 
-class SharedConstant {
+final class SharedConstant {
   SharedConstant._();
   static SharedConstant instance = SharedConstant._();
   final String apiKey = "?api_key=${DotEnv.dotenv.env['APIKEY']}";
@@ -14,6 +14,7 @@ class SharedConstant {
     return '${profileIconBase ?? ''}$iconId.png';
   }
 
+  final String appBarTitle = "League of Legends Profile";
   final String pathSummonerData = DotEnv.dotenv.env['SUMMONERDATA'].toString();
   final String pathLeagueData = DotEnv.dotenv.env['LEAGUEDATA'].toString();
   final String summonerIsNotFound = 'Sihirdar Bulunamadı';

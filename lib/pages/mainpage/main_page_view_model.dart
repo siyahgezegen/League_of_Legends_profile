@@ -30,6 +30,7 @@ abstract class MainPageViewModel extends State<MainPage> {
   League league = League();
   List<BestChampion> bestchamplist = [];
 
+  /// Summoner Detail
   Future<void> getSummonerData() async {
     try {
       if (summonerName.isEmpty) {
@@ -45,7 +46,6 @@ abstract class MainPageViewModel extends State<MainPage> {
       });
     } catch (error) {
       setState(() {
-        print('error<getSummonerData>: $error');
         summoner = Summoner();
         dataMessage = SharedConstant.instance.summonerIsNotFound;
       });
